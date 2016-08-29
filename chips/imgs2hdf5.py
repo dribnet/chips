@@ -111,7 +111,7 @@ def main(cliargs):
         dataset_size = num_files
 
     # allocate all files to a split
-    num_valid_max = int(args.percent_test * num_files / 100.0)
+    num_valid_max = int(args.percent_valid * num_files / 100.0)
     num_test_max = int(args.percent_test * num_files / 100.0)
     num_train_max = num_files - num_valid_max - num_test_max
 
@@ -121,7 +121,7 @@ def main(cliargs):
     test_start = num_train_max + num_valid_max
 
     # determine how many files will in in stored dataset
-    num_valid = int(args.percent_test * dataset_size / 100.0)
+    num_valid = int(args.percent_valid * dataset_size / 100.0)
     num_test = int(args.percent_test * dataset_size / 100.0)
     num_train = dataset_size - num_valid - num_test
 
